@@ -350,7 +350,7 @@ template {
 
 @font-face {
     font-family: 'Roboto';
-    src: url(H:\FrontendTraining\dist/03523cf578d69fa923226ff457b92d90.ttf) format('truetype');
+    src: url(03523cf578d69fa923226ff457b92d90.ttf) format('truetype');
 }
 body {
     font-family: 'Roboto', sans-serif;
@@ -368,7 +368,7 @@ h1 {
 }
 
 .logo {
-    background-image: url(H:\FrontendTraining\dist/eaea97356b1aee8df61ef318f61f886d.png);
+    background-image: url(eaea97356b1aee8df61ef318f61f886d.png);
     background-size: cover;
     height: 200px;
     width: 200px;

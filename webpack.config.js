@@ -33,7 +33,8 @@ const cssLoaders = extra => {
         {
             loader: MiniCssExtractPlugin.loader,
             options: {
-                publicPath: path.resolve(__dirname, 'dist')
+                //publicPath: path.resolve(__dirname, 'dist')
+                publicPath: ''
             },
         },
         'css-loader'
