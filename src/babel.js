@@ -12,3 +12,6 @@ class Util {
 
 console.log('Util id:', Util.id)
 console.log(unused)
+
+import * as _ from 'lodash';
+console.log('Lodash', _.random(0, 42, true))
