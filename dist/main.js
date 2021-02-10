@@ -42,6 +42,7 @@ function _start() {
 }
 
 start().then(console.log);
+var unused = 42;
 
 var Util = function Util() {
   _classCallCheck(this, Util);
@@ -50,6 +51,7 @@ var Util = function Util() {
 _defineProperty(Util, "id", Date.now());
 
 console.log('Util id:', Util.id);
+console.log(unused);
 
 /***/ }),
 

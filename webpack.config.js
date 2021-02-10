@@ -60,6 +60,19 @@ const babelOptions = preset => {
     return opts
 }
 
+const jsLoaders = () => {
+    const loaders = [{
+        loader: 'babel-loader',
+        options: babelOptions()
+    }]
+
+    if (isDev) {
+        loaders.push('eslint-loader')
+    }
+
+    return loaders
+}
+
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
@@ -86,7 +99,7 @@ module.exports = {
         port: 4200,
         hot: isDev
     },
-    devtool: isDev ? 'source-map' : '',
+    devtool: isDev ? 'source-map' : false,
     plugins: [
         new HTMLWebpackPlugin({
             template: './index.html',
@@ -129,14 +142,6 @@ module.exports = {
                 test: /\.(ttf|woff|woff2|eot)$/,
                 loader: 'file-loader'
             },
-            /*{
-                test:  /\.(png|jpg|svg|gif)$/,
-                type: 'asset/resource'
-            },
-            {
-                test:  /\.(ttf|woff|woff2|eot)$/,
-                type: 'asset/resource'
-            },*/
             {
                 test: /\.xml$/,
                 use: ['xml-loader']
@@ -148,10 +153,7 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                use: {
-                  loader: 'babel-loader',
-                  options: babelOptions()
-                }
+                use: jsLoaders()
             },
             {
                 test: /\.ts$/,
