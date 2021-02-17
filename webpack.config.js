@@ -78,11 +78,8 @@ const jsLoaders = () => {
 const plugins = () => {
     const base = [
         new HTMLWebpackPlugin({
-            /*template: './index.html',
-            minify: {
-                collapseWhitespace: isProd
-            }*/
-            template: 'index.pug',
+            filename: 'colors_type.html',
+            template: 'colors_type.pug'
         }),
         new HtmlWebpackPugPlugin(),
         new CleanWebpackPlugin(),
@@ -133,26 +130,6 @@ module.exports = {
         hot: isDev
     },
     devtool: isDev ? 'source-map' : false,
-    /*plugins: [
-        new HTMLWebpackPlugin({
-            template: './index.html',
-            minify: {
-                collapseWhitespace: isProd
-            }
-        }),
-        new CleanWebpackPlugin(),
-        new CopyWebpackPlugin({
-            patterns: [
-                {
-                    from: path.resolve(__dirname, 'src/favicon.png'),
-                    to: path.resolve(__dirname, 'dist')
-                }
-            ]
-        }),
-        new MiniCssExtractPlugin({
-            filename: filename('css')
-        })
-    ],*/
     plugins: plugins(),
     module: {
         rules: [
