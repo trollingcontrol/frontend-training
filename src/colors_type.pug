@@ -2,7 +2,24 @@ doctype html
 html
     head
         meta(charset="utf-8")
-
+        style
+            include common.blocks/wrapper/wrapper.scss
+        style
+            include common.blocks/colors-description/colors-description.scss
+        style
+            include common.blocks/color-block/color-block.scss
     body
         div(class="wrapper")
-        
+            div(class="colors-description")
+                -
+                    let colors = [
+                    { text: "Dark Shade: 100%", code: "#1F2041" },
+                    { text: "Dark Shade: 75%",  code: "#1F2041" },
+                    { text: "Dark Shade: 50%",  code: "#1F2041" },
+                    { text: "Dark Shade: 25%",  code: "#1F2041" },
+                    { text: "Dark Shade: 5%",   code: "#1F2041" },
+                    { text: "Purple",           code: "#BC9CFF" },
+                    { text: "Green",            code: "#6FCF97" }
+                    ]
+                each block in colors
+                    div(class="color-block" style="background: "+block.code)= block.text
