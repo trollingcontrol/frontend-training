@@ -11,13 +11,11 @@ html
         style
             include common.blocks/colors-description/__main/colors-description__main.scss
         style
-            include common.blocks/color-block/color-block.scss
+            include common.blocks/colors-description/__item/colors-description__item.scss
         style
-            include common.blocks/color-block/__rect/color-block__rect.scss
+            include common.blocks/colors-description/__rect/colors-description__rect.scss
         style
             include common.blocks/fonts-description/fonts-description.scss
-        style
-            include common.blocks/fonts-description/__name-block/fonts-description__name-block.scss
     body
         div(class="wrapper")
             div(class="colors-description")
@@ -33,12 +31,12 @@ html
                         { text: "Green",            colorCode: "#6FCF97" }
                         ]
                     each block in colors
-                        div(class="color-block")
+                        div(class="colors-description__item")
                             if block.color
-                                div(class="color-block__rect" style="background:"+block.color)
+                                div(class="colors-description__rect" style="background:"+block.color)
                             else
-                                div(class="color-block__rect" style="background:"+block.colorCode)
-                            div(class="color-block__text")
+                                div(class="colors-description__rect" style="background:"+block.colorCode)
+                            div(class="colors-description__text")
                                 p= block.text
                                 p= block.colorCode
                         div(style="clear:both")
