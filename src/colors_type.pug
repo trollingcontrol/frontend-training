@@ -38,15 +38,16 @@ html
                                 div(class="color-block__rect" style="background:"+block.color)
                             else
                                 div(class="color-block__rect" style="background:"+block.colorCode)
-                            p= block.text
-                            p= block.colorCode
+                            div(class="color-block__text")
+                                p= block.text
+                                p= block.colorCode
                         div(style="clear:both")
             div(class="fonts-description")
                 -
                     let fonts = [
-                    { name: "H1", description: "This one is the sub-section or widget title" },
-                    { name: "H2", description: "Next one is the item title inside widgets" },
-                    { name: "H3", description: "THIS IS A LABEL OR CTA TEXT" },
+                    { name: "H1",   description: "This one is the sub-section or widget title" },
+                    { name: "H2",   description: "Next one is the item title inside widgets" },
+                    { name: "H3",   description: "THIS IS A LABEL OR CTA TEXT" },
                     { name: "Body", description: "This is the body text which is used for most of the design like paragraphs, lists, etc." }
                     ]
                 each block in fonts
