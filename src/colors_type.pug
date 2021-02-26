@@ -16,6 +16,14 @@ html
             include common.blocks/colors-description/__rect/colors-description__rect.scss
         style
             include common.blocks/fonts-description/fonts-description.scss
+        style
+            include common.blocks/fonts-description/__main/fonts-description__main.scss
+        style
+            include common.blocks/fonts-description/__item/fonts-description__item.scss
+        style
+            include common.blocks/fonts-description/__name/fonts-description__name.scss
+        style
+            include common.blocks/fonts-description/__desc/fonts-description__desc.scss    
     body
         div(class="wrapper")
             div(class="colors-description")
@@ -39,14 +47,16 @@ html
                             div(class="colors-description__text")
                                 p= block.text
                                 p= block.colorCode
-                        div(style="clear:both")
             div(class="fonts-description")
-                -
-                    let fonts = [
-                    { name: "H1",   description: "This one is the sub-section or widget title" },
-                    { name: "H2",   description: "Next one is the item title inside widgets" },
-                    { name: "H3",   description: "THIS IS A LABEL OR CTA TEXT" },
-                    { name: "Body", description: "This is the body text which is used for most of the design like paragraphs, lists, etc." }
-                    ]
-                each block in fonts
-                    div(class="fonts-description__name-block")= block.description
+                div(class="fonts-description__main")
+                    -
+                        let fonts = [
+                        { name: "H1",   description: "This one is the sub-section or widget title" },
+                        { name: "H2",   description: "Next one is the item title inside widgets" },
+                        { name: "H3",   description: "THIS IS A LABEL OR CTA TEXT" },
+                        { name: "Body", description: "This is the body text which is used for most of the design like paragraphs, lists, etc." }
+                        ]
+                    each block in fonts
+                        div(class="fonts-description__item")
+                            div(class="fonts-description__name")= block.name
+                            div(class="fonts-description__desc")= block.description
